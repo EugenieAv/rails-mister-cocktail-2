@@ -5,15 +5,16 @@ class DosesController < ApplicationController
 
     @dose = Dose.new(params_dose)
     @dose.cocktail = @cocktail
-
-
-
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
       # @review = Review.new
       render "cocktails/show"
     end
+  end
+
+  def update
+
   end
 
   def destroy
@@ -25,6 +26,6 @@ class DosesController < ApplicationController
   private
 
   def params_dose
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:ingredient_id, :quantity)
   end
 end

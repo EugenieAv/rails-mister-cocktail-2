@@ -2,18 +2,19 @@
   <h1>My favorites Cocktails</h1>
   <div class="cocktails-content-container">
     <% @cocktails.each_with_index do |cocktail, i| %>
-      <% if (i+1).odd? %>
-        <div class='item-cocktail'
-             data-aos="fade-left" id='<%="#{i+1}" %>' >
-          <%= render "content_card_cocktail", {cocktail: cocktail, i: i} %>
-        </div>
-      <% else %>
-        <div class='item-cocktail card-right-side'
-             data-aos="fade-right" id='<%="#{i+1}" %>' >
-          <%= render "content_card_cocktail", {cocktail: cocktail, i: i} %>
-        </div>
+      <%= link_to cocktail_path(cocktail) do  %>
+        <% if (i+1).odd? %>
+          <div class='item-cocktail'
+               data-aos="fade-left" id='<%="#{i+1}" %>' >
+            <%= render "content_card_cocktail", {cocktail: cocktail, i: i} %>
+          </div>
+        <% else %>
+          <div class='item-cocktail card-right-side'
+               data-aos="fade-right" id='<%="#{i+1}" %>' >
+            <%= render "content_card_cocktail", {cocktail: cocktail, i: i} %>
+          </div>
+        <% end %>
       <% end %>
-
     <% end %>
   </div>
 </div>

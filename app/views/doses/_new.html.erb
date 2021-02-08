@@ -1,8 +1,20 @@
-<h3>Add a new dose</h3>
+<div class="card-new-dose">
 
 
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-    <%= f.association :ingredient, input_html: { class: 'select2' } %>
-    <%= f.input :description %>
-    <%= f.submit "pff", class: 'btn btn-danger' %>
-<% end %>
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+      <%= f.association :ingredient,
+          input_html: { class: 'select2' },
+          wrapper_html: { class: 'ingredient-input' } %>
+      <%= f.input :quantity %>
+      <%#= f.input :description %>
+      <%= button_tag type: 'submit', class: "btn btn-danger" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+      <%= link_to "#description", class: "btn btn-danger"  do%>
+          <i class="fas fa-chevron-right"></i>
+          <em>say more</em>
+      <% end %>
+  <% end %>
+
+</div>
+

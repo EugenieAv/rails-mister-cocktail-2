@@ -1,11 +1,49 @@
+<div class="container container-edit-cocktail">
+  <h1>
+    <em>
+      Make My Own Recipes for
+      <span id="title-typed-text"></span>
+      <span style="color: #F2B824"><%= @cocktail.name.upcase %></span>
+    </em>
+  </h1>
 
+  <% if @cocktail.doses.count ==0 %>
+    <div class="form-first-dose" id="form-new-doses">
+      <h3> 2 - Choose your ingredients </h3>
 
-
-<div class="form-style">
-  <h2> Some Change to do? </h2>
-  <%= simple_form_for(@cocktail) do |f| %>
-      <%= f.input :name %>
-
-      <%= f.submit class: 'btn btn-danger' %>
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+    </div>
+  <% else %>
+    <h3> 2 - Choose your ingredients </h3>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div id="form-new-doses">
+          <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 liste-ingredients">
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+              <li>
+                <h5><%= dose.quantity%> de <%= dose.ingredient.name %> </h5>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
   <% end %>
+
+  <div id="description" class="update-cocktail-with-description">
+    <h3> 3 - Recipie</h3>
+    <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :description, class: "description-recipe" %>
+        <%= f.submit class: "btn btn-danger" %>
+    <% end %>
+
+  </div>
+
+
 </div>

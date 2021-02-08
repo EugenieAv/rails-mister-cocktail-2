@@ -2,5 +2,12 @@
   <%= link_to root_path do %>
     <%= image_tag "icon.svg", alt: "alttext", width: "7%" %>
   <% end %>
-  <%= link_to "All cocktails", cocktails_path  %>
+  <% if controller_name == "cocktails" && action_name == "index" %>
+    <%= link_to new_cocktail_path do  %>
+    <span><i class="fas fa-plus"></i> Cocktail</span>
+    <% end %>
+  <%# elsif controller_name == "cocktails" && action_name == "new"%>
+  <% else %>
+    <%= link_to "All cocktails", cocktails_path  %>
+  <% end %>
 </div>

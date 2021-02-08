@@ -23,6 +23,13 @@
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
+  p {
+    color: #97B005;
+  }
+  .fas {
+    color: #97B005;
+    margin-right: 1rem;
+  }
 }
 
 .right {
@@ -35,4 +42,51 @@
 
 .card-right-side {
   flex-direction: row-reverse;
+}
+
+.ingredient-input {
+  display: flex;
+  flex-direction: column;
+}
+.select2 {
+  width:100%;
+
+}
+
+#dose_ingredient_id {
+  width:100%;
+}
+
+.liste-ingredients {
+  // border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    padding-left: 0;
+    width: 90%;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#cocktail_description {
+  height: 100px;
+}
+
+.container-show-cocktail {
+  i {
+    color: #97B005;
+    font-size: 1rem;
+  }
+  h3 {
+    // text-shadow: 1px 1px 1px #97B005;
+  }
+}
+
+.update-cocktail-with-description {
+ margin-top: 3rem;
 }

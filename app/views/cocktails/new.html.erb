@@ -1,16 +1,18 @@
+
+<%#= action_name %>
 <div class="container">
-  <h1>new cocktail page</h1>
+  <h1><em>Create My Own Recipes</em></h1>
 
 
-  <div class="form-style">
-    <h2> Create a wonderful 🍸 </h2>
+  <div class="form-style" id="form-new-cocktail">
+    <h3> 1 - Add a new one 🍸 </h3>
     <%= simple_form_for(@cocktail) do |f| %>
         <%= f.input :name, label: "Choose your cocktail's name", error: "Cocktail's name is mandatory, please specify one", id: "input-new-cocktail" %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit "Go create", class: 'btn btn-danger' %>
+        <%= f.submit "Go create", class: 'btn btn-danger submit-form-cocktail' %>
     <% end %>
   </div>
-
 </div>
+
 
 

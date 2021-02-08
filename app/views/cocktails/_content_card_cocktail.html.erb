@@ -6,10 +6,9 @@
         width: 300,
         crop: :fill %>
   <% end %>
-  <div>
-    <%= link_to cocktail_path(cocktail) do  %>
-      <%= cocktail.name %>
-    <% end %>
+  <div style="text-align: center;">
+    <p><i class="fas fa-caret-right"></i><%= cocktail.name %></p>
+
     <%= link_to cocktail_path(cocktail),
         method: :delete,
         data: { confirm: "Are you sure?" } do %>
