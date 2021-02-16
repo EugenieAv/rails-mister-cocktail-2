@@ -1,14 +1,17 @@
 <div class=" container container-show-cocktail">
   <h1>
-    <em>
-      The
-      <span style="color: #F2B824"><%= @cocktail.name.upcase %></span>
-      Recipe
-      <span id="title-typed-text"></span>
-      <%= link_to edit_cocktail_path(@cocktail) do %>
-        <i class="fas fa-pen"></i>
-      <% end %>
-    </em>
+    <span id="the-typed-text"></span>
+    <span id="title-typed-text" style="color: #F2B824" data-message="<%= @cocktail.name.upcase %>">
+
+      <!-- <span style="color: #F2B824">The<%#= @cocktail.name.upcase %> Recipe</span> -->
+
+      <!-- <span id="title-typed-text"></span> -->
+
+    </span>
+    <span id="recipe-typed-text"></span>
+    <%= link_to edit_cocktail_path(@cocktail) do %>
+      <i class="fas fa-pen"></i>
+    <% end %>
 
   </h1>
 

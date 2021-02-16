@@ -24,3 +24,10 @@ ingredients["drinks"].each do |ingredient|
 end
 Ingredient.create(name: "Campari")
 
+
+
+# item = {
+#   clef1: value1,
+# }
+
+# item[:clef1]   # => value1
